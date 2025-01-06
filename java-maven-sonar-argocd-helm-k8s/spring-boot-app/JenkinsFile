@@ -8,6 +8,11 @@ pipeline {
         //git branch: 'main', url: 'https://github.com/Dharmendra-Chourasiya/Jenkins-Zero-To-Hero.git'
       }
     }
+    stage('TRIVY FS SCAN') {
+        steps {
+            sh "trivy fs ."
+        }
+    }
     stage('Build and Test') {
       steps {
         sh 'ls -ltr'
